@@ -449,7 +449,7 @@ bool World::LoadLightmapsFromFile(const ::std::string& filename) {
   cout << "Lightmap size: " << lightmap_buffer.size() / lightmap_size << endl;
   cout << "Triangle count: " << triangles_.size() << endl;
 
-  if ((lightmap_buffer.size() / lightmap_size) < triangles_.size()) {
+  if ((lightmap_buffer.size() / lightmap_size) != 2 * triangles_.size()) {
     // Lightmap count is less than triangle count, so this lightmap
     // was not generated for the current geometry. Regenerate it.
     cout << "Lightmap was not generated for the current map. Regenerating..."
